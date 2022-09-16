@@ -1,0 +1,35 @@
+.card{
+    width: 50%;
+    margin: 0 auto;
+    height: 40vh;
+    top: 55px;
+    position: relative;
+}
+.card-header{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+.form-group{
+    margin: 25px 0px 0px 70px;
+}
+.form-group label{
+    width: 100%;
+    font-weight: 400;
+    font-family: system-ui;
+    font-size: 20px;
+}
+.form-group input{
+    width: 85%;
+}
+.form-group .btn{
+    text-decoration: none;
+}
+.form-group .btn:focus{
+    box-shadow: none;
+
+}
+.form-group .btn:hover{
+    background-color: none !important;
+    border-color: none !important;
+}

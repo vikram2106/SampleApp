@@ -1,0 +1,50 @@
+<app-header></app-header>
+<div class="container">
+    <div class="card">
+       <h4 class="card-header">Register</h4>
+       <div class="card-body">
+          <form  [formGroup]="addUserForm" (ngSubmit)="saveUser()">
+            <div class="form-group">
+               <label for="" >Username</label>
+               <input type="text" formControlName="username" >
+               <div *ngIf="addUserForm.get('username')?.invalid && 
+               addUserForm.get('username')?.errors && 
+               (addUserForm.get('username')?.dirty || addUserForm.get('username')?.touched)">
+               <small class="text-danger"
+               *ngIf="addUserForm.get('username')?.hasError('required')">
+               *This field is required
+           </small>
+           <small class="text-danger"
+               *ngIf="addUserForm.get('username')?.hasError('minlength')">
+               *The minimum length for this field is 6 characters
+           </small>
+               </div>
+            </div>
+            <div class="form-group">
+               <label for="">Password</label>
+               <input type="text"  formControlName="password" >
+               <div *ngIf="addUserForm.get('password')?.invalid && addUserForm.get('password')?.errors && 
+                     (addUserForm.get('password')?.dirty || addUserForm.get('password')?.touched)">
+                    <small class="text-danger"
+                        *ngIf="addUserForm.get('password')?.hasError('required')">
+                             *This field is required
+                    </small>
+                    <small class="text-danger"
+                          *ngIf="addUserForm.get('password')?.hasError('minlength')">
+                             The minimum length for this field is 6 numbers
+                    </small>
+                    <small class="text-danger"
+                    *ngIf="addUserForm.get('password')?.hasError('pattern')">
+                         This field requires numbers
+                   </small>
+               </div>
+
+            </div>
+            <div style="text-align: center;" class="form-group">
+               <button type="submit" class="btn btn-primary" [disabled]="!addUserForm.valid">Signup</button>
+               <a routerLink="/login" class="btn btn-link">Login</a>
+            </div>
+          </form>
+       </div>
+    </div>
+   </div>

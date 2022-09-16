@@ -1,0 +1,65 @@
+<app-header></app-header>
+<ng-container *ngIf="items.length!=0">
+    <div class="container">
+    <div class="card-table">
+        <div class="card-product">
+            <h1>Items In Your Cart :{{totalItem}}</h1>
+            <div class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Product Name</th>
+                        <th>Product Img</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of items;let i = index">
+                        <th>{{i+1}}</th>
+                        <th>{{item.title}}</th>
+                        <th><img class="img-responsive" src="{{item.image}}" alt=""></th>
+                        <th>{{item.price}}</th>
+                        <th>
+                            <button [disabled]="item.quantity === 4" class="add" (click)="addQuantity(item)" >+</button>
+                             <span>{{item.quantity}}</span>
+                            <button [disabled]="item.quantity === 1" class="add" (click)="removeQuantity(item)">-</button>
+                        </th>
+                        <th>{{item.price * item.quantity}}</th>
+                        <button (click)="removeCart(i)" class="delete" mat-fab color="primary" aria-label="Example icon button with a delete icon">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </tr>
+                    <tr  >
+                        <th>                       
+                            <span class="font-weight-bold ">TotalAmount <b class="grandtotal">{{grandTotal}}</b></span>  
+                        </th>
+                    </tr>
+                    <tr>
+                        <th colspan="8"></th>
+                        <th><div (click)="emptyCart()" style="background-color: red;border:none;color:black;font-size:15px;font-weight:bold" class="btn btn-primary">EmptyCart</div></th>
+                        <th><div style="background-color: green;border:none;width: 102px;" class="btn btn-primary" routerLink="">Shop More</div></th>
+                        <th><div class="btn btn-primary" (click)="checkout()" routerLink="/checkout">CheckOut</div></th>
+                    </tr>
+                </tbody>
+            </div>
+        </div>
+    </div>
+</div>
+</ng-container>
+<ng-container *ngIf="items.length==0">
+    <div class="container">
+        <div class="card">
+            <h5 class="card-title">Cart</h5>
+        </div>
+        <div class="center">
+            <img src="{{img}}" alt="">
+            <h4>Your cart is empty!</h4>
+            <h6>Add item to it now</h6>
+            <div class="btn btn-primary" routerLink="">Shop Now</div>
+        </div>
+    </div>
+    
+</ng-container>

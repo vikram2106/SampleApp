@@ -1,0 +1,26 @@
+<header>
+    <div class="navbar bg-primary shadow-sm">
+        <div class="navbar-brand align-item-center d-flex">
+            <mat-icon class="icon">shop</mat-icon>
+            
+            <div class="form-group">
+                <input type="text"  class="form-control" placeholder="search products"/>
+            </div>
+        </div>
+        <div> 
+            <span *ngIf="!isLoggedIn" >
+              <button routerLink="/signup" class="byn btn-primary" >
+                <mat-icon  class="cart">account_circle</mat-icon><strong>{{user}}</strong>
+              </button>
+            </span>  
+            <span *ngIf="this.username">
+                <button (click)="logout()" class="byn btn-primary" >
+                    <mat-icon  class="cart">delete</mat-icon><strong>Logout</strong>
+                </button>
+           </span>
+        <button routerLink="/cart" class="byn btn-primary">
+            <mat-icon class="cart">shopping_cart</mat-icon><strong>Cart<span class="badge bg-secondary" >{{totalItem}}</span></strong>
+        </button>
+        </div>
+    </div>
+</header>

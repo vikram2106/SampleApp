@@ -1,0 +1,43 @@
+<app-header></app-header>
+<div class="card-top container-fluid">
+    <div class="container d-flex">
+        <div class="menitem">
+           <a (click)="filter('mens')">
+            <img src="{{img1}}" alt="">
+            <h6>{{name1}}</h6>
+           </a> 
+        </div>
+        <div class="womenitem">
+            <a (click)="filter('womens')">
+             <img src="{{img2}}" alt="">
+             <h6>{{name2}}</h6>
+            </a> 
+         </div>
+         <div class="item">
+            <a (click)="filter('electronics')" >
+             <img src="{{img3}}" alt="">
+             <h6>{{name3}}</h6>
+            </a> 
+         </div>
+        <div class="jewelery">
+        <a  (click)="filter('jewelery')" >
+            <img src="{{img4}}" alt="">
+            <h6>{{name4}}</h6>
+        </a> 
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let product of filterProd | filter:search">
+            <div class="card col-md-3">
+                <img src="{{product.image}}" alt="">
+                <h5 class="title">{{product.title}}</h5>
+                <p><strong>Price </strong>{{product.price}}</p>
+                <p class="description">{{product.description}}</p>
+                <div class="btn btn-primary" (click)="addToCart(product)">Add to cart</div>
+            </div>
+        </ng-container>
+    </div>
+</div>

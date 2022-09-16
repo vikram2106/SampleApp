@@ -1,0 +1,44 @@
+.container{
+    position: relative;
+    top: 100px;
+    width: 50%;
+}
+.card{
+    height: 50vh;
+}
+h2{
+    text-align: center;
+    font-weight: bolder;
+    font-size: x-large;
+    margin-top: 20px;
+}
+.row{
+    position: relative;
+    top: 50px;
+}
+.img-div{
+width: 100%;
+
+}
+.img-cont{
+    width: 28%;
+    margin: 0 auto;
+}
+img{
+    width: 70%;
+    margin-top: 30px;
+    margin-left: 40px;
+}
+button{
+    width: 50% ;
+    text-align: center;
+    border-radius: 25rem;
+    padding: 9px;
+    border: 2px solid greenyellow;
+    background-color: white;
+    margin-top: 30px;
+    margin-left: 35px;
+    color: greenyellow;
+    font-weight: bolder;
+    font-size: 14px;
+}

@@ -1,0 +1,63 @@
+.card{
+    height: 60vh;
+    margin: 25px;
+    padding: 25px;
+}
+.card h5{
+    font-weight: bold;
+    font-size: 16px;
+}
+.card img{
+    text-decoration: none;
+    color: inherit;
+    border: none;
+    outline: none;
+    height: 162px;
+    width: 250px;
+    margin: 20px 0px 0px 0px;
+
+}
+.card-product h1{
+    text-align: center;
+}
+.card-product .table{
+    text-align: center;
+    margin: 0 auto;
+}
+.img-responsive{
+    width: 10%;
+}
+.quantity{
+    width: 80%;
+    text-align: center;
+}
+.center{
+    position: absolute;
+    top: 40%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.center img{
+    width: 40%;
+}
+.center h4{
+    font-size:18px;
+}
+.center h6{
+    font-size:14px;
+}
+.delete{
+    border: none;
+    color: red;
+}
+.add{
+    border: none;
+    width: 18px;
+    color: white;
+    background-color: blue;
+    border-radius: 150%;
+}
+.grandtotal{
+    color: blue;
+}
